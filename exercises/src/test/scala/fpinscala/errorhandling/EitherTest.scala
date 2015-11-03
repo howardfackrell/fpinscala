@@ -43,7 +43,7 @@ class EitherTest extends UnitSpec {
   it should "traverse a non empty list without errors" in {
     var l = List(1, 2, 3)
 
-    var converted: Either[String, List[String]] = Either.traverseViaFold(l){ a =>
+    val converted: Either[String, List[String]] = Either.traverseViaFold(l){ a =>
       if (a > 0)
         Right(2*a+"")
       else
@@ -56,7 +56,7 @@ class EitherTest extends UnitSpec {
   it should "traverse a list with errors" in {
     var l = List(1, -2, 3)
 
-    var converted: Either[String, List[String]] = Either.traverseViaFold(l){ a =>
+    val converted: Either[String, List[String]] = Either.traverseViaFold(l){ a =>
       if (a > 0)
         Right(2*a+"")
       else

@@ -16,6 +16,17 @@ object Howard {
 
     println(s"pos:$pos begin:$begin end:$end url:$url")
 
+
+
+//    val pat = """(atg([atg][atg][atg])*?(taa|tga|taa))""".r
+    val pat = """(?=(ATG((?!ATG)[ATGC]{3})*(TAA|TAG|TGA)))""".r
+
+    val it = pat.findAllMatchIn("""ATGAAATGAAAA""".toUpperCase()).mkString("\n")
+//    val it = pat.findAllMatchIn("""ccatgccctaataaatgtctgtaatgtaga""".toUpperCase()).mkString("\n")
+//    val it = pat.findAllMatchIn("""CATGTAATAGATGAATGACTGATAGATATGCTTGTATGCTATGAAAATGTGAAATGACCCA""".toLowerCase()).mkString("\n")
+
+    println(it)
+
   }
 
 }
